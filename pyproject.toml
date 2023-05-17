@@ -12,6 +12,11 @@ sqlalchemy = "^2.0.13"
 psycopg2 = "^2.9.6"
 alembic = "^1.10.4"
 pydantic = {extras = ["email"], version = "^1.10.7"}
+gravatar = "^0.1"
+libgravatar = "^1.0.4"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-multipart = "^0.0.6"
 
 
 [build-system]
