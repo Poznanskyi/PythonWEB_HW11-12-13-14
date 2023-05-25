@@ -2,7 +2,7 @@ from datetime import date, datetime
 from sqlalchemy.orm import Session
 
 from src.database.models import Contact
-from src.schemas import ContactModel, ContactName
+from src.schemas import ContactModel
 
 
 async def validate_birthday(brth: date):
@@ -63,7 +63,7 @@ async def update_contact(body: ContactModel, contact_id, db: Session):
     return contact
 
 
-async def remove_contact(contact_id, db: Session):
+async def remove_contact(contact_id: int, db: Session):
     contact = await get_contact_by_id(contact_id, db)
     if contact:
         db.delete(contact)

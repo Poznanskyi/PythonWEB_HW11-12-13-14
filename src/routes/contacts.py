@@ -4,7 +4,7 @@ from typing import List
 from sqlalchemy.orm import Session
 
 from src.database.db import get_db
-from src.schemas import ContactResponse, ContactModel, ContactName
+from src.schemas import ContactResponse, ContactModel
 from src.repository import contacts as repository_contacts
 from src.database.models import Role, User
 from src.services.auth import auth_service

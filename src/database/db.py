@@ -1,10 +1,10 @@
-import configparser
+'''import configparser
 import pathlib
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-file_config = pathlib.Path(__file__).parent.parent.joinpath('conf/config.ini')
+file_config = pathlib.Path(__file__).parent.parent.joinpath('conf/config.py')
 config = configparser.ConfigParser()
 config.read(file_config)
 
@@ -16,7 +16,26 @@ db_name = config.get('DEV', 'DB_NAME')
 
 SQLALCHEMY_DATABASE_URL = f"postgresql+psycopg2://{username}:{password}@{domain}:{port}/{db_name}"
 
+
 engine = create_engine(SQLALCHEMY_DATABASE_URL, echo=True, max_overflow=5)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+
+# Dependency
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()'''
+
+from src.conf.config import settings
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+SQLALCHEMY_DATABASE_URL = settings.sqlalchemy_database_url
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 

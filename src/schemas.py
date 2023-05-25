@@ -1,5 +1,3 @@
-from datetime import date
-
 from pydantic import BaseModel, EmailStr, Field
 
 from src.database.models import Role
@@ -10,7 +8,7 @@ class ContactModel(BaseModel):
     surname: str = Field(min_length=1, max_length=20)
     email: EmailStr
     phone: str
-    birthday: date
+    birthday: str
     description: str
 
 
@@ -20,7 +18,7 @@ class ContactResponse(BaseModel):
     surname: str = 'Surname'
     email: EmailStr
     phone: str = '0993334567'
-    birthday: date
+    birthday: str
     description: str
 
     class Config:
@@ -48,7 +46,22 @@ class UserResponse(BaseModel):
         orm_mode = True
 
 
+class UserDb(BaseModel):
+    id: int
+    username: str
+    email: str
+    avatar: str
+    confirmed: bool
+
+    class Config:
+        orm_mode = True
+
+
 class TokenModel(BaseModel):
     access_token: str
     refresh_token: str
     token_type: str = "bearer"
+
+
+class RequestEmail(BaseModel):
+    email: EmailStr
