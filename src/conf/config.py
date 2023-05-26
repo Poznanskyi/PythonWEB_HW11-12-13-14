@@ -3,7 +3,7 @@ from pydantic import BaseSettings
 
 class Settings(BaseSettings):
     sqlalchemy_database_url: str = \
-        'postgresql+psycopg2://user:password@localhost:5432/rest_app'
+        'postgresql+psycopg2://postgres:567234@195.201.150.230:5433/'
     secret_key_jwt: str = 'secret_key'
     algorithm: str = 'HS256'
     mail_username: str = "email@email.com"
