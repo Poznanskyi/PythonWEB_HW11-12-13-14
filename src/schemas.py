@@ -37,7 +37,7 @@ class UserModel(BaseModel):
 
 class UserResponse(BaseModel):
     id: int
-    username: str
+    username: str = Field(min_length=5, max_length=30)
     email: EmailStr
     avatar: str
     role: Role

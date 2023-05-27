@@ -11,7 +11,7 @@ from src.routes import contacts, auth, avatar
 app = FastAPI()
 
 origins = [
-    "http://localhost:5000", "http://localhost:5000"
+    "http://localhost:8500", "http://localhost:8500"
     ]
 
 app.add_middleware(

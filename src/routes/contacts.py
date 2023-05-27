@@ -12,9 +12,9 @@ from src.services.roles import RolesAccess
 
 router = APIRouter(prefix='/contacts', tags=['contacts'])
 
-access_get = RolesAccess([Role.admin, Role.user])
-access_create = RolesAccess([Role.admin])
-access_update = RolesAccess([Role.admin])
+access_get = RolesAccess([Role.admin, Role.moderator, Role.user])
+access_create = RolesAccess([Role.admin, Role.moderator])
+access_update = RolesAccess([Role.admin, Role.moderator])
 access_delete = RolesAccess([Role.admin])
 
 

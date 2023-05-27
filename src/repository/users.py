@@ -1,4 +1,3 @@
-
 from libgravatar import Gravatar
 from sqlalchemy.orm import Session
 
