@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 import sys
 import os
+sys.path.append(os.path.abspath('../..'))
 
-sys.path.append(os.path.abspath('..'))
 project = 'GoItHW14'
 copyright = '2023, Poznanskyi'
 author = 'Poznanskyi'
