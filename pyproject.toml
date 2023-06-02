@@ -20,7 +20,11 @@ python-multipart = "^0.0.6"
 cloudinary = "^1.33.0"
 fastapi-mail = "^1.2.8"
 config = "^0.5.1"
+sphinx = "^7.0.1"
 
+
+[tool.poetry.group.dev.dependencies]
+sphinx = "^7.0.1"
 
 [build-system]
 requires = ["poetry-core"]
